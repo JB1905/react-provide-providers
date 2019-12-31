@@ -1,2 +1,2 @@
 export { ProvideProviders } from './Provider';
-export { useProviders } from './useProviders';
+export { useProvider } from './useProvider';

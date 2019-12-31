@@ -20,36 +20,42 @@ $ yarn add react-provide-providers
 ## Getting Started
 **• Import hook in React application file:**
 ```js
-import ProvideProviders, { useProviders } from 'react-provide-providers';
+import { ProvideProviders, useProviders } from 'react-provide-providers';
 ```
 
 #### Options
 Name | Type | Default | Description
 -|-|-|-
-**updateOnResize** | boolean | `true` | Update sizes on window resize
 
 #### Returned Values
 Name | Type | Description
 -|-|-
-**vw** | number | Window viewport width
-**vh** | number | Window viewport height
 
 ## Example
 
 ```js
 import React from 'react';
-import ProvideProviders, { useProviders } from 'react-provide-providers';
+import { ProvideProviders, useProviders } from 'react-provide-providers';
 
 const MyReallyHappyWrappedComponent = () => {
-  const [] = useProviders();
+  const { theme, auth } = useProviders('theme', 'auth');
 
-  return ();
+  return (
+    <>
+      <p>Primary color: {theme.primary}</p>
+      <p>Is authenticated: {auth.isAuthenticated}</p>
+    </>
+  );
 }
+
+const Theme = React.createContext();
+const Auth = React.createContext();
 
 const App = () => {
   const providers = {
-    
-  }
+    theme: <Theme.Provider values={{ primary: "dark" }} />,
+    auth: <Auth.Provider values={{ isAuthenticated: true }} />
+  };
 
   return (
     <ProvideProviders providers={providers}>

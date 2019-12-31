@@ -1,7 +1,7 @@
 {
   "name": "react-provide-providers",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.0-beta.1",
+  "description": "Solve \"wrapper hell\" problem in React project",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/react-provide-providers.cjs.js",

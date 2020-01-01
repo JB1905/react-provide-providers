@@ -26,7 +26,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ProvideProviders } from 'react-provide-providers';
 
-import App from './App'
+import App from './App';
 
 const Theme = React.createContext();
 const Auth = React.createContext();

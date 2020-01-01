@@ -18,26 +18,40 @@ $ yarn add react-provide-providers
 ```
 
 ## Getting Started
-**• Import hook in React application file:**
+**• Import `ProvideProviders` from library in your React app, wrap main component and pass providers:**
 ```js
-import { ProvideProviders, useProviders } from 'react-provide-providers';
+// index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ProvideProviders } from 'react-provide-providers';
+
+import App from './App'
+
+const Theme = React.createContext();
+const Auth = React.createContext();
+
+const providers = {
+  theme: <Theme.Provider values={{ primary: "dark" }} />,
+  auth: <Auth.Provider values={{ isAuthenticated: true }} />
+};
+
+ReactDOM.render(
+  <ProvideProviders providers={providers}>
+    <App />
+  </ProvideProviders>,
+  document.getElementById('root')
+);
 ```
 
-#### Options
-Name | Type | Default | Description
--|-|-|-
-
-#### Returned Values
-Name | Type | Description
--|-|-
-
-## Example
-
+**• Then use `useProviders` Hook:**
 ```js
-import React from 'react';
-import { ProvideProviders, useProviders } from 'react-provide-providers';
+// App.js
 
-const MyReallyHappyWrappedComponent = () => {
+import React from 'react';
+import { useProviders } from 'react-provide-providers';
+
+const App = () => {
   const { theme, auth } = useProviders('theme', 'auth');
 
   return (
@@ -46,23 +60,7 @@ const MyReallyHappyWrappedComponent = () => {
       <p>Is authenticated: {auth.isAuthenticated}</p>
     </>
   );
-}
-
-const Theme = React.createContext();
-const Auth = React.createContext();
-
-const App = () => {
-  const providers = {
-    theme: <Theme.Provider values={{ primary: "dark" }} />,
-    auth: <Auth.Provider values={{ isAuthenticated: true }} />
-  };
-
-  return (
-    <ProvideProviders providers={providers}>
-      <MyReallyHappyWrappedComponent />
-    </ProvideProviders>
-  );
-}
+};
 
 export default App;
 ```

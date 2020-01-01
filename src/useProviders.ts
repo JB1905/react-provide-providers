@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { State } from './Provider';
 
-export const useProvider = (...contexts: string[]): string | object | null => {
+export const useProviders = (...contexts: string[]): string | object | null => {
   const providers = useContext(State);
 
   if (contexts.length === 1 && providers[contexts[0]]) {

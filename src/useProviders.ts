@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { State } from './Provider';
+import { State } from './context';
 
 export const useProviders = (...contexts: string[]): string | object | null => {
   const providers = useContext(State);

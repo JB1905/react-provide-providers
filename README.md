@@ -65,5 +65,26 @@ const App = () => {
 export default App;
 ```
 
+**• Or `withProviders` HOC:**
+```js
+// App.js
+
+import React from 'react';
+import { withProviders } from 'react-provide-providers';
+
+const App = props => {
+  const { theme, auth } = props;
+
+  return (
+    <>
+      <p>Primary color: {theme.primary}</p>
+      <p>Is authenticated: {auth.isAuthenticated}</p>
+    </>
+  );
+};
+
+export default withProviders('theme', 'auth')(App);
+```
+
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada

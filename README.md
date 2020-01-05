@@ -33,7 +33,8 @@ const Auth = React.createContext();
 
 const providers = {
   theme: <Theme.Provider values={{ primary: "dark" }} />,
-  auth: <Auth.Provider values={{ isAuthenticated: true }} />
+  auth: <Auth.Provider values={{ isAuthenticated: true }} />,
+  modal: { show: false, timeout: 300 }
 };
 
 ReactDOM.render(
@@ -52,12 +53,13 @@ import React from 'react';
 import { useProviders } from 'react-provide-providers';
 
 const App = () => {
-  const { theme, auth } = useProviders('theme', 'auth');
+  const { theme, auth, modal } = useProviders('theme', 'auth');
 
   return (
     <>
       <p>Primary color: {theme.primary}</p>
       <p>Is authenticated: {auth.isAuthenticated}</p>
+      <p>Modal visible: {modal.show}</p>
     </>
   );
 };
@@ -73,12 +75,13 @@ import React from 'react';
 import { withProviders } from 'react-provide-providers';
 
 const App = props => {
-  const { theme, auth } = props;
+  const { theme, auth, modal } = props;
 
   return (
     <>
       <p>Primary color: {theme.primary}</p>
       <p>Is authenticated: {auth.isAuthenticated}</p>
+      <p>Modal visible: {modal.show}</p>
     </>
   );
 };

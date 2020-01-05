@@ -1,6 +1,6 @@
 {
   "name": "react-provide-providers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Solve \"wrapper hell\" problem in React project",
   "author": "Jakub Biesiada",
   "license": "MIT",

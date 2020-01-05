@@ -53,7 +53,7 @@ import React from 'react';
 import { useProviders } from 'react-provide-providers';
 
 const App = () => {
-  const { theme, auth, modal } = useProviders('theme', 'auth');
+  const { theme, auth, modal } = useProviders('theme', 'auth', modal);
 
   return (
     <>
@@ -86,7 +86,7 @@ const App = props => {
   );
 };
 
-export default withProviders('theme', 'auth')(App);
+export default withProviders('theme', 'auth', 'modal')(App);
 ```
 
 ## License

@@ -11,7 +11,9 @@ export const ProvideProviders = ({ providers, children }: Props) => {
   const state = {} as { [key: string]: any };
 
   Object.entries(providers).map(provider => {
-    state[provider[0]] = provider[1].props.value;
+    state[provider[0]] = provider[1].props
+      ? provider[1].props.value
+      : provider[1];
   });
 
   return <State.Provider value={state}>{children}</State.Provider>;

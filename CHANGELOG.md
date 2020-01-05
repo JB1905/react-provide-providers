@@ -1,6 +1,6 @@
 # react-provide-providers Changelog
 
-## 1.1.0 (2020-01-05)
+## 1.1.0 / 1.1.1 (2020-01-05)
 #### New Feature
 - added option to set object as context
 

@@ -53,7 +53,7 @@ import React from 'react';
 import { useProviders } from 'react-provide-providers';
 
 const App = () => {
-  const { theme, auth, modal } = useProviders('theme', 'auth', modal);
+  const { theme, auth, modal } = useProviders('theme', 'auth', 'modal');
 
   return (
     <>

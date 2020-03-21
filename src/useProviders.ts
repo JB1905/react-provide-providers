@@ -10,7 +10,7 @@ export const useProviders = (...contexts: string[]): string | object | null => {
   } else if (contexts.length > 0) {
     const data: { [key: string]: object | null } = {};
 
-    contexts.map(context => {
+    contexts.map((context) => {
       if (providers[context]) {
         data[context] = providers[context];
       }

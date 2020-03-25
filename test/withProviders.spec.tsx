@@ -5,19 +5,14 @@ import { ProvideProviders, withProviders } from '../src';
 
 const Theme = React.createContext<{ primary?: string }>({ primary: '' });
 const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-  isAuthenticated: undefined
+  isAuthenticated: undefined,
 });
 
 const providers = {
   theme: <Theme.Provider value={{ primary: 'dark' }} />,
   auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-  modal: { show: false, timeout: 300 }
+  modal: { show: false, timeout: 300 },
 };
-
-// React.FC<{
-// modal: { show: boolean; timeout: number };
-// }>
-// React.FC<{ show: boolean; timeout: number }>
 
 describe('withProviders usage with functional component', () => {
   const FunctionalComponent = (props: any) => {
@@ -39,15 +34,9 @@ describe('withProviders usage with functional component', () => {
   });
 });
 
-//<{
-//   modal: { show: boolean; timeout: number };
-// }>
-
 describe('withProviders usage with class component', () => {
   class ClassComponent extends Component<any> {
     render() {
-      // const { modal } = this.props;
-
       return <>{JSON.stringify(this.props)}</>;
     }
   }

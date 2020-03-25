@@ -12,13 +12,13 @@ describe('useProviders', () => {
 
   const Theme = React.createContext<{ primary?: string }>({ primary: '' });
   const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-    isAuthenticated: undefined
+    isAuthenticated: undefined,
   });
 
   const providers = {
     theme: <Theme.Provider value={{ primary: 'dark' }} />,
     auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-    modal: { show: false, timeout: 300 }
+    modal: { show: false, timeout: 300 },
   };
 
   const tree = (
@@ -45,13 +45,13 @@ describe('useProviders', () => {
 
   const Theme = React.createContext<{ primary?: string }>({ primary: '' });
   const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-    isAuthenticated: undefined
+    isAuthenticated: undefined,
   });
 
   const providers = {
     theme: <Theme.Provider value={{ primary: 'dark' }} />,
     auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-    modal: { show: false, timeout: 300 }
+    modal: { show: false, timeout: 300 },
   };
 
   const tree = (
@@ -78,13 +78,13 @@ describe('useProviders', () => {
 
   const Theme = React.createContext<{ primary?: string }>({ primary: '' });
   const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-    isAuthenticated: undefined
+    isAuthenticated: undefined,
   });
 
   const providers = {
     theme: <Theme.Provider value={{ primary: 'dark' }} />,
     auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-    modal: { show: false, timeout: 300 }
+    modal: { show: false, timeout: 300 },
   };
 
   const tree = (
@@ -109,13 +109,13 @@ describe('useProviders', () => {
 
   const Theme = React.createContext<{ primary?: string }>({ primary: '' });
   const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-    isAuthenticated: undefined
+    isAuthenticated: undefined,
   });
 
   const providers = {
     theme: <Theme.Provider value={{ primary: 'dark' }} />,
     auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-    modal: { show: false, timeout: 300 }
+    modal: { show: false, timeout: 300 },
   };
 
   const tree = (

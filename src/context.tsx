@@ -6,7 +6,7 @@ interface Props {
 
 export const State = React.createContext<{ [key: string]: any }>({});
 
-export const ProvideProviders: React.FC<Props> = ({ providers, children }) => {
+export const ProvideProviders: React.FC<Props> = ({ children, providers }) => {
   const state = {} as { [key: string]: any };
 
   Object.entries(providers).map(([key, value]) => {

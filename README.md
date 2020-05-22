@@ -4,21 +4,27 @@
 [![NPM downloads](http://img.shields.io/npm/dm/react-provide-providers.svg?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
 
 ## About
+
 Solve "wrapper hell" problem in React project
 
 ## How to Install
+
 First, install the library in your project by npm:
+
 ```sh
 $ npm install react-provide-providers
 ```
 
 Or Yarn:
+
 ```sh
 $ yarn add react-provide-providers
 ```
 
 ## Getting Started
+
 **• Import `ProvideProviders` from library in your React app, wrap main component and pass providers:**
+
 ```js
 // index.js
 
@@ -32,9 +38,9 @@ const Theme = React.createContext();
 const Auth = React.createContext();
 
 const providers = {
-  theme: <Theme.Provider values={{ primary: "dark" }} />,
+  theme: <Theme.Provider values={{ primary: 'dark' }} />,
   auth: <Auth.Provider values={{ isAuthenticated: true }} />,
-  modal: { show: false, timeout: 300 }
+  modal: { show: false, timeout: 300 },
 };
 
 ReactDOM.render(
@@ -46,6 +52,7 @@ ReactDOM.render(
 ```
 
 **• Then use `useProviders` Hook:**
+
 ```js
 // App.js
 
@@ -68,13 +75,14 @@ export default App;
 ```
 
 **• Or `withProviders` HOC:**
+
 ```js
 // App.js
 
 import React from 'react';
 import { withProviders } from 'react-provide-providers';
 
-const App = props => {
+const App = (props) => {
   const { theme, auth, modal } = props;
 
   return (
@@ -90,4 +98,5 @@ export default withProviders('theme', 'auth', 'modal')(App);
 ```
 
 ## License
+
 This project is licensed under the MIT License © 2020-present Jakub Biesiada

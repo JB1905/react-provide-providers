@@ -1,5 +1,11 @@
 # react-provide-providers Changelog
 
+## 1.1.2 (2020-06-26)
+
+#### Tests
+
+- added tests
+
 ## 1.1.0 / 1.1.1 (2020-01-05)
 
 #### New Feature

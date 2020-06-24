@@ -21,7 +21,7 @@ describe('withProviders usage with functional component', () => {
 
   const FunctionalComponentHOC = withProviders('modal')(FunctionalComponent);
 
-  it('should render ', () => {
+  it('should render context state', () => {
     const { container } = render(
       <ProvideProviders providers={providers}>
         <FunctionalComponentHOC />
@@ -43,7 +43,7 @@ describe('withProviders usage with class component', () => {
 
   const ClassComponentHOC = withProviders('modal')(ClassComponent);
 
-  it('should render ', () => {
+  it('should render context state', () => {
     const { container } = render(
       <ProvideProviders providers={providers}>
         <ClassComponentHOC />

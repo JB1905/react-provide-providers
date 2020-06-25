@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { withProviders } from '../src';
 
-import { composeTree } from './__utils__/composeTree';
+import { composeTree } from './utils';
 
 describe('withProviders usage with functional component', () => {
   const FunctionalComponent = (props: any) => {

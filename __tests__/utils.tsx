@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProvideProviders } from '../../src';
+import { ProvideProviders } from '../src';
 
 const Theme = React.createContext<{ primary?: string }>({ primary: '' });
 const Auth = React.createContext<{ isAuthenticated?: boolean }>({

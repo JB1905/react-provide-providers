@@ -62,7 +62,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "modulePathIgnorePatterns": ["__tests__/__utils__"]
+    "modulePathIgnorePatterns": ["__tests__/utils"]
   },
   "husky": {
     "hooks": {

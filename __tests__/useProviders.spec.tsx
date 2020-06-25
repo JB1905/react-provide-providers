@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { useProviders } from '../src';
 
-import { composeTree } from './__utils__/composeTree';
+import { composeTree } from './utils';
 
 describe('useProviders', () => {
   it('should render values for single context', () => {

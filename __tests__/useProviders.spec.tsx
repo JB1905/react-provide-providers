@@ -20,7 +20,7 @@ describe('useProviders', () => {
     );
   });
 
-  it('should render ', () => {
+  it('should render values for multiple contexts', () => {
     const Component: React.FC = () => {
       const providers = useProviders('modal', 'auth');
 
@@ -34,7 +34,7 @@ describe('useProviders', () => {
     );
   });
 
-  it('should render values for multiple contexts', () => {
+  it('should not render values for non-existent context', () => {
     const Component: React.FC = () => {
       const providers = useProviders('settings');
 

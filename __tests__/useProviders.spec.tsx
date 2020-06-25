@@ -1,26 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { ProvideProviders, useProviders } from '../src';
+import { useProviders } from '../src';
+
+import { composeTree } from './__utils__/composeTree';
 
 describe('useProviders', () => {
-  const Theme = React.createContext<{ primary?: string }>({ primary: '' });
-  const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-    isAuthenticated: undefined,
-  });
-
-  const providers = {
-    theme: <Theme.Provider value={{ primary: 'dark' }} />,
-    auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-    modal: { show: false, timeout: 300 },
-  };
-
-  const renderTree = (Component: React.FC) => (
-    <ProvideProviders providers={providers}>
-      <Component />
-    </ProvideProviders>
-  )
-
   it('should render values for single context', () => {
     const Component: React.FC = () => {
       const providers = useProviders('modal');
@@ -28,7 +13,7 @@ describe('useProviders', () => {
       return <p>{JSON.stringify(providers)}</p>;
     };
 
-    const { container } = render(renderTree(Component));
+    const { container } = render(composeTree(Component));
 
     expect(container.firstChild!.textContent!).toBe(
       '{"show":false,"timeout":300}'
@@ -42,7 +27,7 @@ describe('useProviders', () => {
       return <p>{JSON.stringify(providers)}</p>;
     };
 
-    const { container } = render(renderTree(Component));
+    const { container } = render(composeTree(Component));
 
     expect(container.firstChild!.textContent!).toBe(
       '{"modal":{"show":false,"timeout":300},"auth":{"isAuthenticated":true}}'
@@ -56,7 +41,7 @@ describe('useProviders', () => {
       return <p>{JSON.stringify(providers)}</p>;
     };
 
-    const { container } = render(renderTree(Component));
+    const { container } = render(composeTree(Component));
 
     expect(container.firstChild!.textContent!).toBe('null');
   });
@@ -68,7 +53,7 @@ describe('useProviders', () => {
       return <p>{JSON.stringify(providers)}</p>;
     };
 
-    const { container } = render(renderTree(Component));
+    const { container } = render(composeTree(Component));
 
     expect(container.firstChild!.textContent!).toBe('null');
   });

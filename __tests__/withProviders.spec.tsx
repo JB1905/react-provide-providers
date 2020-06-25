@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import { render } from '@testing-library/react';
 
-import { ProvideProviders, withProviders } from '../src';
+import { withProviders } from '../src';
 
-const Theme = React.createContext<{ primary?: string }>({ primary: '' });
-const Auth = React.createContext<{ isAuthenticated?: boolean }>({
-  isAuthenticated: undefined,
-});
-
-const providers = {
-  theme: <Theme.Provider value={{ primary: 'dark' }} />,
-  auth: <Auth.Provider value={{ isAuthenticated: true }} />,
-  modal: { show: false, timeout: 300 },
-};
+import { composeTree } from './__utils__/composeTree';
 
 describe('withProviders usage with functional component', () => {
   const FunctionalComponent = (props: any) => {
@@ -22,11 +13,7 @@ describe('withProviders usage with functional component', () => {
   const FunctionalComponentHOC = withProviders('modal')(FunctionalComponent);
 
   it('should render context state', () => {
-    const { container } = render(
-      <ProvideProviders providers={providers}>
-        <FunctionalComponentHOC />
-      </ProvideProviders>
-    );
+    const { container } = render(composeTree(FunctionalComponentHOC));
 
     expect(container.firstChild!.textContent!).toBe(
       '{"show":false,"timeout":300}'
@@ -44,11 +31,7 @@ describe('withProviders usage with class component', () => {
   const ClassComponentHOC = withProviders('modal')(ClassComponent);
 
   it('should render context state', () => {
-    const { container } = render(
-      <ProvideProviders providers={providers}>
-        <ClassComponentHOC />
-      </ProvideProviders>
-    );
+    const { container } = render(composeTree(ClassComponentHOC));
 
     expect(container.firstChild!.textContent!).toBe(
       '{"show":false,"timeout":300}'

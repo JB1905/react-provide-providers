@@ -13,8 +13,6 @@ const providers = {
   modal: { show: false, timeout: 300 },
 };
 
-export const composeTree = (Component: React.ComponentType<any>) => (
-  <ProvideProviders providers={providers}>
-    <Component />
-  </ProvideProviders>
+export const makeWrapper = () => ({ children }: any) => (
+  <ProvideProviders providers={providers}>{children}</ProvideProviders>
 );

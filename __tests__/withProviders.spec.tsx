@@ -3,38 +3,40 @@ import { render } from '@testing-library/react';
 
 import { withProviders } from '../src';
 
-import { composeTree } from './utils';
+import { makeWrapper } from './utils';
+
+const renderResult = (props: any) => (
+  <p data-testid="result">{JSON.stringify(props)}</p>
+);
+
+const result = '{"show":false,"timeout":300}';
 
 describe('withProviders usage with functional component', () => {
   const FunctionalComponent = (props: any) => {
-    return <p>{JSON.stringify(props)}</p>;
+    return renderResult(props);
   };
 
   const FunctionalComponentHOC = withProviders('modal')(FunctionalComponent);
 
   it('should render context state', () => {
-    const { container } = render(composeTree(FunctionalComponentHOC));
+    const { getByTestId } = render(makeWrapper()(FunctionalComponentHOC));
 
-    expect(container.firstChild!.textContent!).toBe(
-      '{"show":false,"timeout":300}'
-    );
+    expect(getByTestId('result').innerHTML).toBe(result);
   });
 });
 
 describe('withProviders usage with class component', () => {
   class ClassComponent extends Component<any> {
     render() {
-      return <>{JSON.stringify(this.props)}</>;
+      return renderResult(this.props);
     }
   }
 
   const ClassComponentHOC = withProviders('modal')(ClassComponent);
 
   it('should render context state', () => {
-    const { container } = render(composeTree(ClassComponentHOC));
+    const { getByTestId } = render(makeWrapper()(ClassComponentHOC));
 
-    expect(container.firstChild!.textContent!).toBe(
-      '{"show":false,"timeout":300}'
-    );
+    expect(getByTestId('result').innerHTML).toBe(result);
   });
 });

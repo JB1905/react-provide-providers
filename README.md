@@ -1,4 +1,4 @@
-# [react-provide-providers](https://github.com/jb1905/react-provide-providers)
+# [react-provide-providers](https://github.com/cool-hooks/react-provide-providers)
 
 [![NPM version](http://img.shields.io/npm/v/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
 [![NPM downloads](http://img.shields.io/npm/dm/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
@@ -9,6 +9,11 @@
 ## About
 
 Solve "wrapper hell" problem in React project
+
+### Similar Projects
+
+- [react-compose-wrappers](https://github.com/kolodny/react-compose-wrappers/) by [Moshe Kolodny](https://github.com/kolodny/)
+- [provider-compose](https://github.com/neonxp/compose/) by [Alexander Kiryukhin](https://github.com/neonxp/)
 
 ## How to Install
 

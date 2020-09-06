@@ -3,8 +3,8 @@
 [![NPM version](http://img.shields.io/npm/v/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
 [![NPM downloads](http://img.shields.io/npm/dm/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
 [![NPM license](https://img.shields.io/npm/l/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
-[![Travis](https://img.shields.io/travis/cool-hooks/react-provide-providers/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-provide-providers)
 [![Codecov](https://img.shields.io/codecov/c/github/cool-hooks/react-provide-providers?style=flat-square)](https://codecov.io/gh/cool-hooks/react-provide-providers)
+[![Travis](https://img.shields.io/travis/cool-hooks/react-provide-providers/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-provide-providers)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-provide-providers?style=flat-square)](https://bundlephobia.com/result?p=react-provide-providers)
 
 ## About

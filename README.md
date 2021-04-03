@@ -1,11 +1,20 @@
-# [react-provide-providers](https://github.com/jb1905/react-provide-providers)
+# [react-provide-providers](https://github.com/cool-hooks/react-provide-providers)
 
-[![NPM version](http://img.shields.io/npm/v/react-provide-providers.svg?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
-[![NPM downloads](http://img.shields.io/npm/dm/react-provide-providers.svg?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
+[![NPM version](http://img.shields.io/npm/v/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
+[![NPM downloads](http://img.shields.io/npm/dm/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
+[![NPM license](https://img.shields.io/npm/l/react-provide-providers?style=flat-square)](https://www.npmjs.com/package/react-provide-providers)
+[![Codecov](https://img.shields.io/codecov/c/github/cool-hooks/react-provide-providers?style=flat-square)](https://codecov.io/gh/cool-hooks/react-provide-providers)
+[![Travis](https://img.shields.io/travis/cool-hooks/react-provide-providers/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-provide-providers)
+[![Bundle size](https://img.shields.io/bundlephobia/min/react-provide-providers?style=flat-square)](https://bundlephobia.com/result?p=react-provide-providers)
 
 ## About
 
 Solve "wrapper hell" problem in React project
+
+### Similar Projects
+
+- [react-compose-wrappers](https://github.com/kolodny/react-compose-wrappers/) by [Moshe Kolodny](https://github.com/kolodny/)
+- [provider-compose](https://github.com/neonxp/compose/) by [Alexander Kiryukhin](https://github.com/neonxp/)
 
 ## How to Install
 

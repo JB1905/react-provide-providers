@@ -11,6 +11,10 @@
 
 Solve "wrapper hell" problem in React project
 
+### Demo
+
+**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/react-provide-providers-wlzzb)**
+
 ### Similar Projects
 
 - [react-compose-wrappers](https://github.com/kolodny/react-compose-wrappers/) by [Moshe Kolodny](https://github.com/kolodny/)

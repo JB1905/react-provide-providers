@@ -10,7 +10,9 @@ describe('useProviders', () => {
       wrapper: makeWrapper(),
     });
 
-    // expect(result.current).toBe(true);
+    expect(JSON.stringify(result.current)).toBe(
+      JSON.stringify({ show: false, timeout: 300 })
+    );
   });
 
   it('should render values for multiple contexts', () => {
@@ -18,7 +20,12 @@ describe('useProviders', () => {
       wrapper: makeWrapper(),
     });
 
-    // expect(result.current).toBe(true);
+    expect(JSON.stringify(result.current)).toBe(
+      JSON.stringify({
+        modal: { show: false, timeout: 300 },
+        auth: { isAuthenticated: true },
+      })
+    );
   });
 
   it('should not render values for non-existent context', () => {
@@ -26,14 +33,14 @@ describe('useProviders', () => {
       wrapper: makeWrapper(),
     });
 
-    // expect(result.current).toBe(true);
+    expect(result.current).toBe(null);
   });
 
   it('should not render any context values', () => {
     const { result } = renderHook(() => useProviders(), {
       wrapper: makeWrapper(),
     });
-  });
 
-  // expect(result.current).toBe(true);
+    expect(result.current).toBe(null);
+  });
 });

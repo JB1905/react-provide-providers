@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useProviders } from './useProviders';
 
-export const withProviders = (...contexts: string[]) => (
-  WrappedComponent: React.ComponentType<any>
-) => (props: React.ComponentProps<any>) => (
-  <WrappedComponent {...props} {...useProviders(...contexts)} />
-);
+export function withProviders() {
+  return <T,>(WrappedComponent: React.ComponentType<T>) => (props: T) => (
+    <WrappedComponent {...props} {...useProviders()} />
+  );
+}

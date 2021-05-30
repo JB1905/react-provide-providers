@@ -1,17 +1,11 @@
 import React from 'react';
 
 interface Props {
-  readonly providers: { [key: string]: any };
+  readonly children: React.ReactNode;
 }
 
-export const State = React.createContext<{ [key: string]: any }>({});
+export const State = React.createContext<any>({});
 
-export const ProvideProviders: React.FC<Props> = ({ children, providers }) => {
-  const state = {} as { [key: string]: any };
-
-  Object.entries(providers).map(([key, value]) => {
-    state[key] = value.props ? value.props.value : value;
-  });
-
-  return <State.Provider value={state}>{children}</State.Provider>;
+export const ProvideProviders = ({ children }: Props) => {
+  return <State.Provider value={{}}>{children}</State.Provider>;
 };

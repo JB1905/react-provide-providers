@@ -13,6 +13,7 @@ const providers = {
   modal: { show: false, timeout: 300 },
 };
 
-export const makeWrapper = () => ({ children }: any) => (
+// TODO update types
+export const makeWrapper = (): React.FC => ({ children }) => (
   <ProvideProviders providers={providers}>{children}</ProvideProviders>
 );
